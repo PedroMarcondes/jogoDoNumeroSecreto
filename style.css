@@ -51,6 +51,7 @@ body::before {
 .container__informacoes {
     flex: 1;
     padding: 3rem;
+    min-width: 45rem;
 }
 
 .container__botao {
@@ -110,7 +111,7 @@ button:disabled {
     background-color: gray;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1350px) {
 
     h1 {
         font-size: 50px;
@@ -135,6 +136,7 @@ button:disabled {
     }
 
     .container__informacoes {
-        padding: 1rem
+        padding: 1rem;
+        min-width: auto;
     }
 }
