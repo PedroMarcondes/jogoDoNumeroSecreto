@@ -25,6 +25,7 @@ function verificarChute() {
         let mensagemTentativas = `Você descobriu o número secreto em ${tentativas} ${palavraTentativa}!`;
         exibirTextoNaTela('p', mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
+        document.getElementById('chute').setAttribute('disabled', true);
     } else {
         if (chute > numeroSecreto) {
             exibirTextoNaTela('p', 'O número secreto é menor!');
@@ -45,12 +46,11 @@ function gerarNumeroAleatorio(numeroMaximo) {
     }
 
     if (listaNumerosSorteados.includes(numeroSorteado)) {
-        console.log('entrou');
         return gerarNumeroAleatorio(numeroMaximo);
         // RESOLVIDO - MOTIVO FUNCAO SEM PARAMETRO - RETORNAVA UNDEFINED E ADICIONAVA NaN NA LISTA
     } else {
         listaNumerosSorteados.push(numeroSorteado);
-        console.log(listaNumerosSorteados);
+        //console.log(listaNumerosSorteados);
         return numeroSorteado;
     }
 }
@@ -62,6 +62,7 @@ function reiniciarJogo() {
     tentativas = 1;
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled', true);
+    document.getElementById('chute').removeAttribute('disabled');
 }
 
 function limparCampo() {
